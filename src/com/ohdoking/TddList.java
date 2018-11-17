@@ -1,5 +1,6 @@
 package com.ohdoking;
 
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
@@ -45,7 +46,11 @@ public class TddList<E> implements List<E> {
 
 	@Override
 	public boolean add(E e) {
-		internal = new Object[] {e};
+		
+		Object[] temp = Arrays.copyOf(internal, internal.length + 1);
+		temp[internal.length] = e;
+		internal = temp;
+		
 		return true;
 	}
 

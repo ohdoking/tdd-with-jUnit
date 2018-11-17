@@ -49,5 +49,14 @@ class TddListTest {
 		
 	}
 	
+	@Test
+	public void givenListWithAnElement_whenAnotherIsAdded_thenGetReturnsBoth() {
+		list.add("first");
+		list.add("second");
+		
+		assertEquals("first", list.get(0));
+		assertEquals("second", list.get(1));
+	}
+	
 
 }
